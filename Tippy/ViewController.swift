@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -34,6 +35,11 @@ class ViewController: UIViewController {
 
     @IBAction func Calculate(_ sender: AnyObject)
     {
+        if (billField.text?.isEmpty)!
+        {
+          billField.becomeFirstResponder()
+        }
+        
         let tipPercentages = [0.10, 0.15, 0.20]
         
         let bill = Double(billField.text!) ?? 0
